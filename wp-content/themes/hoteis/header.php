@@ -8,8 +8,10 @@
     <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url') ?>/imagens/favicon.png" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_url') ?>/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+      
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+
 
     <?php wp_head(); ?>
 
