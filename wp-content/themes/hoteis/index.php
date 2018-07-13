@@ -2,6 +2,15 @@
 /* Template Name: Template Home */
 ?>
 
+
+
+<?php while (have_posts () ): the_post () ;   
+
+$acomodacoes_inicial = get_field('acomodacoes_inicial');
+
+?>
+
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
@@ -97,49 +106,127 @@
 			<h5>HOSPEGADEM COM PREÇOS PROMOCIONAIS</h5>
 			<div class='AcomodacoesContainer'>
 				
-				<a href="#" class='AcomodacoesBox'>
-					<div class='AcomodacoesIMG'>
-						<img src="">
-					</div>
-					<div class='AcomodacoesDesc'>
-						<h4>STANDARD</h4>
-						<p>Apartir de</p>
-						<span><h3>R$196</h3><p> /diária + taxa</p></span>
-						<i>VER DETALHES</i>
-					</div>
-				</a>
-				<a href="#" class='AcomodacoesBox'>
-					<div class='AcomodacoesIMG'>
-						<img src="">
-					</div>
-					<div>
-						
-					</div>
-				</a>
+				<?php                  
+				for($w = 0; $w < count($acomodacoes_inicial); $w++){
+					$titulo_acomodacao = $acomodacoes_inicial[$w]['titulo_da_acomodacao'];
+					$link_acomodacao = $acomodacoes_inicial[$w]['link_acomodacoes'];
+					$imagem_acomodacao = $acomodacoes_inicial[$w]['imagem_da_acomodacao'];
+					$valor_acomodacao = $acomodacoes_inicial[$w]['valor_da_acomodacao'];
 
-				<a href="#" class='AcomodacoesBox'>
-					<div class='AcomodacoesIMG'>
-						<img src="">
-					</div>
-					<div>
-						
-					</div>
-				</a>
+					?>  
+					<a href="<?php echo $link_acomodacao?>" class='AcomodacoesBox'>
+						<div class='AcomodacoesIMG'>
+							<img src="<?php echo $imagem_acomodacao?>">
+						</div>
+						<div class='AcomodacoesDesc'>
+							<h4><?php echo $titulo_acomodacao?></h4>
+							<p>Apartir de</p>
+							<span><h3><?php echo'R$'.$valor_acomodacao?></h3><p> /diária + taxa</p></span>
+							<i>VER DETALHES</i>
+						</div>
+					</a>
 
-				<a href="#" class='AcomodacoesBox'>
-					<div class='AcomodacoesIMG'>
-						<img src="">
-					</div>
-					<div>
-						
-					</div>
-				</a>
+					<?php
+				} ?>
 
 
 			</div>
 		</main>
 	</div>
 </section>
+
+<section id='Ofertas'>
+	<div class='container'>
+		<main>
+			<h2>OFERTAS E PACOTES</h2>
+			<h5>OFERTAS EM DESTAQUE</h5>
+
+			<div class='OfertasHomeContainer'>
+				<a href="#" class='OfertasBox'>
+					<div class="OfertasIMG">
+						
+					</div>
+					<div class="OfertasDesc">
+						<h4>Evento em recife</h4>
+						<p>3 dias e 2 noites</p>
+						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
+					</div>
+				</a>
+				<a href="#" class='OfertasBox'>
+					<div class="OfertasIMG">
+						
+					</div>
+					<div class="OfertasDesc">
+						<h4>Evento em recife</h4>
+						<p>3 dias e 2 noites</p>
+						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
+					</div>
+				</a>
+				<a href="#" class='OfertasBox'>
+					<div class="OfertasIMG">
+						
+					</div>
+					<div class="OfertasDesc">
+						<h4>Evento em recife</h4>
+						<p>3 dias e 2 noites</p>
+						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
+					</div>
+				</a>
+				<a href="#" class='btnVerMais'>VER MAIS PACOTES E PROMOÇÕES</a>
+			</div>
+		</main>
+	</div>
+</section>
+
+<section id='NoticiasHome'>
+	<div class='container'>
+		<main>
+			<h2>NOTÍCIAS</h2>
+			<h5>FIQUE POR DENTRO DAS NOVIDADES</h5>
+
+			<div class='noticiasContainer'>
+				<div class='noticiasBox'><i>29/10/2018</i>
+					<div class='noticiasIMG'>
+						
+					</div>
+					<div class='noticiasDESC'>
+						<h>#ConheçaRecife</h>
+						<h3>Parque 13 de Maio</h3>
+						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
+						<a href="#">Continuar lendo</a>
+					</div>
+				</div>
+				<div class='noticiasBox'>
+					<i>29/10/2018</i>
+					<div class='noticiasIMG'>
+						
+					</div>
+					<div class='noticiasDESC'>
+						<h>#ConheçaRecife</h>
+						<h3>Parque 13 de Maio</h3>
+						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
+						<a href="#">Continuar lendo</a>
+					</div>
+				</div>
+				<div class='noticiasBox'>
+					<i>29/10/2018</i>
+					<div class='noticiasIMG'>
+						
+					</div>
+					<div class='noticiasDESC'>
+						<h>#ConheçaRecife</h>
+						<h3>Parque 13 de Maio</h3>
+						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
+						<a href="#">Continuar lendo</a>
+					</div>
+				</div>
+			</div>
+			<a href="#" class='btnVerMaisNoticias'>VER MAIS NOTÍCIAS</a>
+		</main>
+	</div>
+</section>
+
+<?php endwhile;  wp_reset_query();?>
 <?php get_footer(); ?>
 
 
