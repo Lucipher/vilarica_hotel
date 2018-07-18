@@ -32,20 +32,9 @@
         </script>
     </head>
     <body>
-
-       <div class='preHeader'>
-           <img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/logohoteis.png">
-           <div class='conhecaContainer'>
-               <p class='pConheca'>CONHEÇA TAMBÉM:</p>
-               <a href="#" target="_blank" alt='Logo Park Hotel' title="Logo Park Hotel" class='logoConheca'><img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/park-hotel-logo.png"></a>
-               <a href="#" target="_blank" alt='Logo Praia Hotel' title="Logo Praia Hotel" class='logoConheca'><img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/praia-hotel-logo.png"></a>
-               <span></span>
-               <i class="material-icons">phone</i>
-               <p class='prefixoPais'>+55</p><h3 class='numeroPreHeader'>81 21215101</h3>
-               <span></span>
-               <a href="#" title='Entre em Contato' alt='Entre em Contato botão'>ENTRE EM CONTATO</a>
-           </div>
-       </div>
+   
+    <?php require_once('pre-header.php') ?>
+     
        <header>
         <a href="/" title='Logo Vila Rica Hotel' alt='Logo Vila Rica Hotel'><img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/logo.png"></a>
 

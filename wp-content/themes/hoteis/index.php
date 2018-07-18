@@ -7,6 +7,8 @@
 <?php while (have_posts () ): the_post () ;   
 
 $acomodacoes_inicial = get_field('acomodacoes_inicial');
+$ofertas_e_pacotes = get_field('ofertas_e_pacotes');
+$noticias_inicial = get_field('noticias_inicial');
 
 ?>
 
@@ -45,16 +47,29 @@ $acomodacoes_inicial = get_field('acomodacoes_inicial');
 </div>
 
 <div class='FiltroReserva'>
-	<span>
+	<span class='ReservaTitulo'>
 		<p>Faça sua</p>
 		<h3>Reserva</h3>
 	</span>
 	<form class='filtroForm'>
-		<div class='containerDate'>
+<!-- 		<div class='containerDate'>
 			<input class="ui-datepicker-input" placeholder="ENTRADA">
-		</div>
-		<div class='containerDate container2'>
+		</div> -->
+<!-- 		<div class='containerDate container2'>
 			<input class="ui-datepicker-input" placeholder="SAIDA">
+		</div> -->
+
+		<div class='CalendarioBox'>
+			<input type="text" name="entrada" id='Entrada' placeholder="ENTRADA">
+			<i class="material-icons">
+calendar_today
+</i>
+		</div>
+		<div class='CalendarioBox'>
+			<input type="text" name="saida" id='Saida' placeholder="SAÍDA">
+			<i class="material-icons">
+calendar_today
+</i>
 		</div>
 		<div class="dropp ">
 			<div class="dropp-header">
@@ -95,6 +110,10 @@ $acomodacoes_inicial = get_field('acomodacoes_inicial');
 				<label for="4Criancas">4 CRIANÇAS<input type="radio" id="4Criancas" name="qtdCriancas" value="4 CRIANÇAS"/></label>
 			</div>
 		</div>	
+		<button type="Submit" class='btnReservar'>RESERVAR</button>
+		<a href="#" class='btnChat'><i class="material-icons">
+chat
+</i>CHAT ONLINE</a>
 	</form>
 </div>
 
@@ -102,8 +121,8 @@ $acomodacoes_inicial = get_field('acomodacoes_inicial');
 <section id='AcomodacoesHome'>
 	<div class='container'>
 		<main>
-			<h2>ACOMODAÇÕES</h2>
-			<h5>HOSPEGADEM COM PREÇOS PROMOCIONAIS</h5>
+			<h2><?php echo the_field('titulo_da_sessao_acomodacoes'); ?></h2>
+			<h5><?php echo the_field('descricao_da_sessao_acomodacoes'); ?></h5>
 			<div class='AcomodacoesContainer'>
 				
 				<?php                  
@@ -138,40 +157,35 @@ $acomodacoes_inicial = get_field('acomodacoes_inicial');
 <section id='Ofertas'>
 	<div class='container'>
 		<main>
-			<h2>OFERTAS E PACOTES</h2>
-			<h5>OFERTAS EM DESTAQUE</h5>
+			<h2><?php echo the_field('titulo_da_sessao_de_ofertas'); ?></h2>
+			<h5><?php echo the_field('descricao_da_sessao_de_ofertas'); ?></h5>
 
 			<div class='OfertasHomeContainer'>
-				<a href="#" class='OfertasBox'>
+				<?php                  
+				for($w = 0; $w < count($ofertas_e_pacotes); $w++){
+					$oferta_imagem = $ofertas_e_pacotes[$w]['oferta_imagem'];
+					$oferta_titulo = $ofertas_e_pacotes[$w]['oferta_titulo'];
+					$oferta_descricao = $ofertas_e_pacotes[$w]['oferta_descricao'];
+					$oferta_valor = $ofertas_e_pacotes[$w]['oferta_valor'];
+					$sufixo_oferta = $ofertas_e_pacotes[$w]['sufixo_oferta'];
+					$link_da_oferta = $ofertas_e_pacotes[$w]['link_da_oferta'];
+
+				?>  
+
+				<a href="<?php echo $link_da_oferta?>" class='OfertasBox'>
 					<div class="OfertasIMG">
-						
+						<img src="<?php echo $oferta_imagem?>">
 					</div>
 					<div class="OfertasDesc">
-						<h4>Evento em recife</h4>
-						<p>3 dias e 2 noites</p>
-						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
+						<h4><?php echo $oferta_titulo?></h4>
+						<p><?php echo $oferta_descricao?></p>
+						<span><i>R$</i><h3><?php echo $oferta_valor?></h3><i>/<?php echo $sufixo_oferta?></i></span>
 					</div>
 				</a>
-				<a href="#" class='OfertasBox'>
-					<div class="OfertasIMG">
-						
-					</div>
-					<div class="OfertasDesc">
-						<h4>Evento em recife</h4>
-						<p>3 dias e 2 noites</p>
-						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
-					</div>
-				</a>
-				<a href="#" class='OfertasBox'>
-					<div class="OfertasIMG">
-						
-					</div>
-					<div class="OfertasDesc">
-						<h4>Evento em recife</h4>
-						<p>3 dias e 2 noites</p>
-						<span><i>R$</i><h3>145</h3><i>/diária</i></span>
-					</div>
-				</a>
+				<?php
+
+			}
+				?>				
 				<a href="#" class='btnVerMais'>VER MAIS PACOTES E PROMOÇÕES</a>
 			</div>
 		</main>
@@ -185,41 +199,32 @@ $acomodacoes_inicial = get_field('acomodacoes_inicial');
 			<h5>FIQUE POR DENTRO DAS NOVIDADES</h5>
 
 			<div class='noticiasContainer'>
-				<div class='noticiasBox'><i>29/10/2018</i>
+				<?php                  
+				for($w = 0; $w < count($noticias_inicial); $w++){
+					$imagem_da_noticia = $noticias_inicial[$w]['imagem_da_noticia'];
+					$hashtag = $noticias_inicial[$w]['hashtag'];
+					$titulo_da_noticia = $noticias_inicial[$w]['titulo_da_noticia'];
+					$descricao_da_noticia = $noticias_inicial[$w]['descricao_da_noticia'];
+					$link_da_noticia = $noticias_inicial[$w]['link_da_noticia'];
+					$data_de_publicacao = $noticias_inicial[$w]['data_de_publicacao'];
+
+				?>  
+
+				<div class='noticiasBox'><i><?php echo $data_de_publicacao?></i>
 					<div class='noticiasIMG'>
-						
+						<img src="<?php echo $imagem_da_noticia?>">
 					</div>
 					<div class='noticiasDESC'>
-						<h>#ConheçaRecife</h>
-						<h3>Parque 13 de Maio</h3>
-						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
-						<a href="#">Continuar lendo</a>
+						<h4>#<?php echo $hashtag?></h4>
+						<h3><?php echo $titulo_da_noticia?></h3>
+						<p><?php echo $descricao_da_noticia?>...</p>
+						<a href="<?php echo $link_da_noticia?>">Continuar lendo</a>
 					</div>
 				</div>
-				<div class='noticiasBox'>
-					<i>29/10/2018</i>
-					<div class='noticiasIMG'>
-						
-					</div>
-					<div class='noticiasDESC'>
-						<h>#ConheçaRecife</h>
-						<h3>Parque 13 de Maio</h3>
-						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
-						<a href="#">Continuar lendo</a>
-					</div>
-				</div>
-				<div class='noticiasBox'>
-					<i>29/10/2018</i>
-					<div class='noticiasIMG'>
-						
-					</div>
-					<div class='noticiasDESC'>
-						<h>#ConheçaRecife</h>
-						<h3>Parque 13 de Maio</h3>
-						<p>Assim como os primeiros parques públicos do Brasil, o Parque 13 de Maio também possui inflências europeias, que têm como modelos parques...</p>
-						<a href="#">Continuar lendo</a>
-					</div>
-				</div>
+
+				<?php
+				}
+				?>
 			</div>
 			<a href="#" class='btnVerMaisNoticias'>VER MAIS NOTÍCIAS</a>
 		</main>

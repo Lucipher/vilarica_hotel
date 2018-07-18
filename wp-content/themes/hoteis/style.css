@@ -26,14 +26,14 @@ Os direitos sobre este site e tema, s├úo de propriedade de Hoteis Pernambuco 
 
 */
 .container {
-  padding: 2em 11em;
+  padding: 2em 8em;
   width: 100%; }
 
 .preHeader {
   width: 100%;
   height: 2.4em;
   background: #eeeeee;
-  padding: 0em 11em;
+  padding: 0em 8em;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -87,7 +87,7 @@ Os direitos sobre este site e tema, s├úo de propriedade de Hoteis Pernambuco 
 
 header {
   width: 100%;
-  padding: 0em 11em;
+  padding: 0em 8em;
   height: 6.5em;
   display: flex;
   align-items: center;
@@ -146,7 +146,10 @@ a:hover {
   align-items: center; }
 
 .carousel-control img {
-  max-width: 27%; }
+  max-width: 35%; }
+
+.carousel-control {
+  width: 12%; }
 
 .backControl {
   justify-content: flex-end; }
@@ -157,13 +160,18 @@ a:hover {
   height: 5em;
   display: flex;
   align-items: center;
-  padding: 0em 11em; }
+  padding: 0em 8em;
+  justify-content: space-between; }
+  .FiltroReserva .ReservaTitulo {
+    margin-left: 0em !important; }
 
 .FiltroReserva span {
   height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  font-size: .9em;
+  margin-left: .5em; }
 
 .FiltroReserva span p {
   color: #fff;
@@ -191,16 +199,13 @@ a:hover {
   content: "";
   position: absolute; }
 
-.dropp {
-  width: 10em;
-  margin-left: 30.2em; }
-
 .dropp-header {
-  width: 10em;
+  height: 3em;
+  width: 8.7em;
   background: transparent;
-  color: #fff;
+  color: #f1f1f1;
   border-radius: 4px;
-  border: 1px solid #fff;
+  border: .6px solid #dcdcdc;
   -webkit-box-align: stretch;
   -moz-box-align: stretch;
   box-align: stretch;
@@ -271,8 +276,10 @@ a:hover {
   transition: all 0.3s ease-in-out; }
 
 .dropp-header__btn .icon {
-  color: #fff;
+  color: #f1f1f1;
   background: none;
+  margin-top: -.1em;
+  margin-right: .1em;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -317,7 +324,7 @@ a:hover {
 
 .dropp-body {
   overflow: hidden;
-  width: 10em;
+  width: 8.7em;
   border-radius: 0px 0px 6px 6px;
   max-height: 0;
   background: transparent;
@@ -356,134 +363,70 @@ a:hover {
 
 .filtroForm {
   z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 89%;
+  justify-content: space-between; }
+  .filtroForm input {
+    background: transparent;
+    color: #f1f1f1;
+    border: 0.6px solid #dcdcdc;
+    border-radius: 4px;
+    padding: .74em 0.7em;
+    width: 8.7em;
+    cursor: pointer; }
+  .filtroForm input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #f1f1f1; }
+  .filtroForm input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #f1f1f1; }
+  .filtroForm input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #f1f1f1; }
+  .filtroForm input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #f1f1f1; }
+  .filtroForm .btnReservar {
+    background: #184c5f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-family: Roboto;
+    padding: .8em 2em;
+    font-weight: 500;
+    letter-spacing: 1px; }
+  .filtroForm .btnChat {
+    background: #2680a3;
+    color: #fff;
+    padding: .8em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-family: Roboto;
+    letter-spacing: 1px; }
+    .filtroForm .btnChat i {
+      margin-right: .3em;
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #f1f1f1; }
+
+.CalendarioBox {
   position: relative; }
+  .CalendarioBox i {
+    color: #fff;
+    position: absolute;
+    right: 8%;
+    top: 30%;
+    font-size: 1.4em; }
 
 .containerDate {
   position: absolute;
   top: 0%; }
-
-.ui-datepicker-holder {
-  background: white;
-  box-shadow: 0 15px 50px -4px grey;
-  display: inline-block;
-  font-family: 'Roboto', sans-serif;
-  margin: calc(50vh - 10px) 0 0;
-  overflow: hidden;
-  padding: 10px;
-  position: relative;
-  transition: all 0.4s;
-  -webkit-transform: scale(0) translateY(0%);
-  transform: scale(0) translateY(0%); }
-  .ui-datepicker-holder button {
-    background: none;
-    border: none;
-    color: #25657f;
-    cursor: pointer;
-    float: right;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    margin: 0 6px 4px 0;
-    padding: 13px 9px; }
-    .ui-datepicker-holder button:focus {
-      outline: 0; }
-  .ui-datepicker-holder.ui-datepicker-holder-open {
-    -webkit-transform: scale(1) translateY(-50%);
-    transform: scale(1) translateY(-50%); }
-
-.ui-datepicker-year-select {
-  display: none; }
-
-th {
-  text-align: center; }
-
-.ui-datepicker-icon,
-.ui-datepicker-input {
-  position: absolute;
-  top: 2.5%;
-  margin-left: 8em;
-  -webkit-transform: translateY(-50%) translateX(-50%); }
-
-.ui-datepicker-icon {
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  font-family: 'Material Icons';
-  font-size: 28px;
-  padding: 20px;
-  margin-left: 2.6em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-transform: translateY(-50%) translateX(110%);
-  transform: translateY(-50%) translateX(110%); }
-
-.ui-datepicker-input {
-  border: 1px solid #fff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  padding: .7em .8em;
-  width: 12em;
-  background: transparent;
-  color: #fff;
-  border-radius: 4px; }
-  .ui-datepicker-input:focus {
-    outline: 0; }
-  .ui-datepicker-input::-webkit-input-placeholder {
-    color: #fff; }
-
-.ui-datepicker {
-  display: block !important; }
-  .ui-datepicker thead tr th span {
-    color: #cbcbcb;
-    display: block;
-    font-size: 12px;
-    margin: 14px 0 5px 0; }
-  .ui-datepicker td a {
-    border-radius: 100%;
-    color: #323232;
-    display: block;
-    font-size: 12px;
-    padding: 13px;
-    text-align: center;
-    text-decoration: none; }
-    .ui-datepicker td a:hover {
-      background: #25657f;
-      color: white; }
-  .ui-datepicker .ui-state-highlight {
-    color: #25657f;
-    font-weight: bold; }
-  .ui-datepicker .ui-datepicker-prev,
-  .ui-datepicker .ui-datepicker-next {
-    cursor: pointer;
-    font-family: 'Material Icons';
-    font-size: 20px;
-    margin: -3px 0 0;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased; }
-  .ui-datepicker .ui-datepicker-prev {
-    float: left; }
-  .ui-datepicker .ui-datepicker-next {
-    float: right; }
-  .ui-datepicker .ui-datepicker-title {
-    color: #616161;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 30px 0 11px 0; }
-
-.ui-datepicker-result {
-  background: #25657f;
-  color: white;
-  margin: -10px;
-  padding: 20px;
-  text-align: left; }
-  .ui-datepicker-result div:first-of-type {
-    color: #f1f1f1;
-    font-size: 14px;
-    margin: 4px 0 3px; }
-  .ui-datepicker-result div:not(:first-of-type) {
-    display: inline-block;
-    font-size: 34px;
-    font-weight: 500;
-    margin-right: 7px; }
 
 .container2 {
   margin-left: 14em; }
@@ -493,28 +436,22 @@ th {
 .container2 .ui-datepicker-icon {
   top: 2.8%; }
 
-.droppAdulto {
-  position: absolute;
-  top: 0%;
-  margin-left: 41.5em; }
-
-.dropCriancas {
-  position: absolute;
-  top: 0%;
-  margin-left: 52.7em; }
-
-#AcomodacoesHome h2 {
-  color: #206580;
-  font-weight: 700;
-  font-family: Roboto;
-  margin: 0; }
-#AcomodacoesHome h5 {
-  font-size: 1.4em;
-  font-family: Roboto;
-  font-weight: 400;
-  margin-top: .5em;
-  margin-bottom: 3em;
-  color: #676767; }
+#AcomodacoesHome {
+  padding-bottom: 2em; }
+  #AcomodacoesHome h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    margin: 0;
+    text-transform: uppercase; }
+  #AcomodacoesHome h5 {
+    font-size: 1.4em;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: .5em;
+    margin-bottom: 3em;
+    color: #676767;
+    text-transform: uppercase; }
 
 .AcomodacoesContainer {
   width: 100%;
@@ -587,7 +524,9 @@ th {
     color: #206580;
     font-weight: 700;
     font-family: Roboto;
-    margin: 0; }
+    margin: 0;
+    margin-top: .5em;
+    text-transform: uppercase; }
   #Ofertas h5 {
     font-size: 1.4em;
     font-family: Roboto;
@@ -595,7 +534,8 @@ th {
     margin-top: .5em;
     margin-bottom: 3em;
     color: #676767;
-    margin-bottom: 4.5em; }
+    margin-bottom: 1.5em;
+    text-transform: uppercase; }
 
 .OfertasHomeContainer {
   width: 100%;
@@ -630,7 +570,7 @@ th {
     justify-content: center;
     overflow: hidden;
     background: red; }
-    .OfertasBox .OfertasIMGimg {
+    .OfertasBox .OfertasIMG img {
       width: 100%; }
   .OfertasBox h4 {
     color: #545454;
@@ -658,17 +598,21 @@ th {
       font-style: normal;
       color: #25657f; }
 
-#NoticiasHome h2 {
-  color: #206580;
-  font-weight: 700;
-  font-family: Roboto; }
-#NoticiasHome h5 {
-  font-size: 1.4em;
-  font-family: Roboto;
-  font-weight: 400;
-  margin-top: .5em;
-  margin-bottom: 3em;
-  color: #676767; }
+#NoticiasHome {
+  padding-bottom: 3em; }
+  #NoticiasHome h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase; }
+  #NoticiasHome h5 {
+    font-size: 1.4em;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: .5em;
+    margin-bottom: 3em;
+    color: #676767;
+    text-transform: uppercase; }
 
 .noticiasContainer {
   display: flex;
@@ -722,13 +666,258 @@ th {
   justify-content: center;
   width: 13em;
   margin-top: 2em; }
+  .btnVerMaisNoticias:hover {
+    text-decoration: none;
+    color: #fff; }
 
-footer {
+.faixaMarcas {
   width: 100%;
-  height: 7em;
+  height: 6em;
   background: #ddd;
   display: flex;
   align-items: center;
   justify-content: center; }
+  .faixaMarcas a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5em; }
+    .faixaMarcas a span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #777;
+      border-radius: 100%;
+      width: 3em;
+      height: 2.4em;
+      margin-right: .5em; }
+      .faixaMarcas a span img {
+        max-width: 57%; }
+    .faixaMarcas a legend {
+      margin: 0;
+      font-size: 19px;
+      color: #777;
+      font-weight: 700; }
+  .faixaMarcas .tripBox {
+    justify-content: flex-start; }
+    .faixaMarcas .tripBox img {
+      max-width: 81%; }
+
+.rodape {
+  background: #444;
+  height: 24em;
+  padding: 3em 0em; }
+  .rodape main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .rodape main .rodapeBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-left: 1px solid #888;
+      width: 92%;
+      height: 14em;
+      padding: 0em 3em; }
+      .rodape main .rodapeBox span {
+        display: flex;
+        align-items: center;
+        color: #e2e2e2;
+        margin-bottom: .8em; }
+        .rodape main .rodapeBox span i {
+          font-size: 1.6em;
+          margin-right: .5em;
+          color: #e6e5e5; }
+        .rodape main .rodapeBox span p {
+          margin: 0;
+          font-family: Roboto;
+          width: 16em;
+          font-weight: 400;
+          font-size: .95em; }
+      .rodape main .rodapeBox h2 {
+        color: #fff;
+        font-family: Roboto;
+        font-size: 2em; }
+      .rodape main .rodapeBox p {
+        font-family: Roboto;
+        color: #e6e5e5; }
+      .rodape main .rodapeBox form {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: .5em; }
+        .rodape main .rodapeBox form input {
+          width: 47%;
+          border: 1px solid #e6e5e5;
+          background: transparent;
+          border-radius: 3px;
+          padding: .3em .8em; }
+        .rodape main .rodapeBox form input:focus {
+          outline: none; }
+        .rodape main .rodapeBox form button:focus {
+          outline: none; }
+        .rodape main .rodapeBox form button {
+          background: #333;
+          border: none;
+          color: #e6e5e5;
+          padding: .5em 1.5em;
+          margin-top: 1em;
+          font-family: roboto; }
+        .rodape main .rodapeBox form input::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: #e6e5e5;
+          font-style: italic; }
+        .rodape main .rodapeBox form input::-moz-placeholder {
+          /* Firefox 19+ */
+          color: #e6e5e5;
+          font-style: italic; }
+        .rodape main .rodapeBox form input:-ms-input-placeholder {
+          /* IE 10+ */
+          color: #e6e5e5;
+          font-style: italic; }
+        .rodape main .rodapeBox form input:-moz-placeholder {
+          /* Firefox 18- */
+          color: #e6e5e5;
+          font-style: italic; }
+
+.vilalogoBranca {
+  max-width: 39%;
+  margin-bottom: 2em; }
+
+.listaRodape {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+  margin: 0; }
+  .listaRodape a {
+    color: #e6e5e5;
+    font-family: Roboto;
+    font-size: 1em;
+    padding: .3em 0em; }
+
+.primeiroRodapeBox {
+  border: none !important;
+  padding: 0 !important;
+  width: 88% !important; }
+
+.segundoRodapeBox {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important; }
+
+.rodapeMarcas {
+  background: #444;
+  width: 100%;
+  height: 7em; }
+  .rodapeMarcas .container {
+    padding: 0em 8em;
+    height: 100%; }
+  .rodapeMarcas main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%; }
+    .rodapeMarcas main .marcasRodape {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 19.5em; }
+
+.ui-datepicker {
+  background: #fff;
+  box-shadow: 0 15px 50px -4px #00000070;
+  width: 20em;
+  height: 30em;
+  margin-top: 2em;
+  padding: 2em 1.5em;
+  display: none; }
+
+.ui-datepicker-header {
+  width: 20em;
+  height: 8em;
+  padding: 1em;
+  margin-left: -1.5em;
+  margin-top: -2em;
+  background: #25657f; }
+
+.ui-datepicker-prev {
+  position: absolute;
+  margin-top: 8em; }
+
+.ui-datepicker-next {
+  position: absolute;
+  right: 6%;
+  margin-top: 8em; }
+
+.ui-datepicker-title {
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ui-datepicker-title select {
+    background: transparent;
+    border: none;
+    font-size: 2.5em;
+    font-family: Roboto;
+    color: #fff; }
+    .ui-datepicker-title select:focus {
+      outline: none; }
+    .ui-datepicker-title select option {
+      background: #174050;
+      border: none;
+      font-family: Roboto; }
+
+.ui-datepicker-calendar {
+  width: 100%;
+  height: 61%;
+  padding: 1em;
+  margin-top: 4em; }
+  .ui-datepicker-calendar td {
+    text-align: center;
+    transition: .3s ease-out;
+    border-radius: 10%; }
+    .ui-datepicker-calendar td:hover {
+      background: #25657f;
+      color: #fff; }
+    .ui-datepicker-calendar td:hover a {
+      color: #fff; }
+  .ui-datepicker-calendar th {
+    color: #cbcbcb;
+    font-family: Roboto;
+    font-size: 12px;
+    text-align: center; }
+  .ui-datepicker-calendar a {
+    transition: .3s ease-out;
+    color: #323232;
+    font-size: 12px;
+    font-family: Roboto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+::-webkit-scrollbar {
+  width: 12px; }
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background: #25657f; }
+
+.dropCriancas .dropp-header, .dropCriancas .dropp-body {
+  width: 9em; }
 
 /*# sourceMappingURL=style.css.map */
