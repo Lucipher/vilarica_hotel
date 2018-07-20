@@ -74,4 +74,5 @@ function config_post_type_cabecalho() {
 }
 
 
+
 ?>

@@ -1,9 +1,6 @@
-<?php get_header(); 
-/*
-Template Name: Template Home
-*/  
+<?php get_header();
+/* Template Name: Template Localização */
 ?>
-
 
 <div class='FiltroReserva FiltroReserva-Interna'>
 	<span class='ReservaTitulo'>
@@ -64,100 +61,72 @@ Template Name: Template Home
 	</form>
 </div>
 
-<section id='SingleNoticia'>
+
+<section id='Localizacao'>
 	<div class='container'>
 		<main>
-			
-<?php
-if(have_posts()):
-	while(have_posts()):
-		the_post();
-		$titulo_da_noticia = get_field('titulo_da_noticia');
-		$corpo_da_noticia = get_field('corpo_da_noticia');
-		$imagem_da_noticia = get_field('imagem_da_noticia');
-		$data_de_publicacao = get_field('data_de_publicacao');
+			<h2>Localização</h2>
 
-		?>
+			<p>Com uma localização privilegiada na Praia de Boa viagem, o Vila Rica Hotel está próxima dos principais pontos de visitação em Recife:</p>
 
-
-
-	
-		<span><h2>NOTÍCIAS / </h2><h1><?php echo $titulo_da_noticia ?></h1></span>
-
-		<div class='NoticiaSingleContainer'>
-			<div class='NoticiaSingleDesc'>
-				<p><?php echo $corpo_da_noticia ?></p>
-			</div>
-			<div class='NoticiaSingleFoto'>
-				<p class='dateSingle'><?php echo $data_de_publicacao ?></p>
+			<div class='LocalizacaoIcons'>
 				<div>
-					<img src="<?php echo $imagem_da_noticia ?>">
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/doctor.png">
+					<p>Pólo médico</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/weight-balance.png">
+					<p>Pólo Judiciário</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/plate-fork-and-knife.png">
+					<p>Pólo<br>gastronômico</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/airplane-shape.png">
+					<p>Aeroporto<br>3,8 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/marca.svg" id='shoppingRecifeMarca'>
+					<p>Shopping<br>Recife<br>3,3 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/riomar.png" id='RioMar'>
+					<p>Shopping<br>Rio Mar<br>6,8 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/tent.png">
+					<p>Centro de <br> convenções<br> 15,5 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/japanese-bridge.png">
+					<p>Recife Antigo <br> 11,1 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/church.png">
+					<p>Olinda <br> 20,7 km</p>
+				</div>
+				<div>
+					<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/sun-umbrella.png">
+					<p>Praias litroal<br> sul e norte<br> 50/55 km </p>
 				</div>
 
-				<p>Compartilhe:</p>
-
-				<span></span>
 
 			</div>
-		</div>
-
-
-
-	<?php endwhile;
-endif;
-wp_reset_query();
-?>
 		</main>
+	</div>	
+</section>
+
+<section>
+	<div class='FiltroEndereco'>
+		<input type="text" name="" placeholder="Digite o endereço"> <button>TRAÇAR ROTA</button>
+	</div>
+	<div class='MapaContainer'>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52922.95244648698!2d-117.85048513926431!3d34.00063603854257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32c8e42f729a9%3A0xea88c028d17dd7a9!2sDiamond+Bar%2C+CA%2C+EUA!5e0!3m2!1spt-BR!2sbr!4v1532105842212" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 </section>
-<?php /*
-Template Name: Template post
-*/  ?>
 
-<?php while (have_posts () ): the_post () ;   
-
-	$noticias_inicial = get_field('noticias_inicial');
-
-?>
-
-
-
-<section id='NoticiasHome'>
-	<div class='container'>
-		<main>
-			<h2>VEJA TAMBÉM</h2>
-
-			<div class='noticiasContainer'>
-				<?php                  
-				for($w = 0; $w < count($noticias_inicial); $w++){
-					$imagem_da_noticia = $noticias_inicial[$w]['imagem_da_noticia'];
-					$hashtag = $noticias_inicial[$w]['hashtag'];
-					$titulo_da_noticia = $noticias_inicial[$w]['titulo_da_noticia'];
-					$descricao_da_noticia = $noticias_inicial[$w]['descricao_da_noticia'];
-					$link_da_noticia = $noticias_inicial[$w]['link_da_noticia'];
-					$data_de_publicacao = $noticias_inicial[$w]['data_de_publicacao'];
-				?>  
-
-				<div class='noticiasBox'><i><?php echo $data_de_publicacao?></i>
-					<div class='noticiasIMG'>
-						<img src="<?php echo $imagem_da_noticia?>">
-					</div>
-					<div class='noticiasDESC'>
-						<h4>#<?php echo $hashtag?></h4>
-						<h3><?php echo $titulo_da_noticia?></h3>
-						<p><?php echo $descricao_da_noticia?>...</p>
-						<a href="<?php echo $link_da_noticia?>">Continuar lendo</a>
-					</div>
-				</div>
-
-				<?php
-				}
-				?>
-			</div>
-			<a href="#" class='btnVerMaisNoticias'>VER MAIS NOTÍCIAS</a>
-		</main>
-	</div>
-</section>
-<?php endwhile;  wp_reset_query();?>
 
 <?php get_footer(); ?>
+
+

@@ -1197,29 +1197,289 @@ a:hover {
     font-family: Roboto;
     text-transform: uppercase;
     margin-bottom: 1.7em; }
-  #InfoSaloes table {
-    width: 85%;
-    background: blue;
-    margin: 0 auto; }
-    #InfoSaloes table thead {
-      background: #25657f;
-      color: #fff; }
-      #InfoSaloes table thead tr {
-        height: 7em; }
-      #InfoSaloes table thead th {
-        text-align: center; }
-    #InfoSaloes table tbody {
-      background: #dddddd;
-      font-family: Roboto;
-      color: #6b6a6a;
-      text-align: center; }
-      #InfoSaloes table tbody td {
-        padding: .8em; }
 
-.trSub {
-  height: 0em !important; }
-  .trSub th {
-    font-size: .8em !important;
-    font-weight: 600 !important; }
+/*PERSONALIZACAO TABELA EVENTOS*/
+.tabletop {
+  color: #FFF !important;
+  text-align: center !important;
+  font-weight: bold;
+  background: #2a657e !important; }
+
+tr {
+  background: #e8ecf1; }
+
+tr:nth-child(2n+2) {
+  background: #d5dae0; }
+
+table tr td {
+  border-right: solid 1px #BFC7D0;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 10px 0px 10px;
+  font-family: 'Source Sans Pro', sans-serif !important; }
+
+table tr td span, table tr td p {
+  text-transform: uppercase; }
+
+#salao-coluna {
+  height: 114px; }
+
+#salao-coluna p {
+  margin-top: 10px; }
+
+#fTec {
+  width: 70px;
+  border-radius: 0 10px 0 0; }
+
+#cadeira {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-auditorio.png) no-repeat top center;
+  padding: 40px 0 0 12px;
+  position: relative;
+  width: 7em !important;
+  display: block;
+  top: -3px; }
+
+.nbord {
+  border: none; }
+
+#uicon {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-u.png) no-repeat top center;
+  display: block;
+  padding: 41px 0 0 0;
+  position: relative;
+  top: -4px; }
+
+#localizacao {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-map.png) no-repeat top center;
+  display: block;
+  padding: 41px 0 0 0;
+  position: relative;
+  top: -4px; }
+
+#escolar {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-escolar.png) no-repeat top center;
+  display: block;
+  padding: 41px 0 0 0;
+  position: relative;
+  top: -4px; }
+
+#espinhicon {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-espinha.png) no-repeat top center;
+  padding: 35px 8px 0 8px;
+  display: block;
+  position: relative; }
+
+#mesaicon {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-mesa.png) no-repeat center 1px;
+  display: block;
+  padding: 45px 0 0 0; }
+
+#dimensoes {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-dimensoes.png) no-repeat top center;
+  display: block;
+  padding: 39px 18px 0 12px; }
+
+#imperial {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-imperial.png) no-repeat top center;
+  display: block;
+  padding: 39px 18px 0 12px; }
+
+#foto {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-fotos.png) no-repeat top center;
+  display: block;
+  padding: 38px 0 0 0; }
+
+.foto {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/icon-fotos-link.png) no-repeat center;
+  display: block;
+  padding: 38px 6px 0 8px; }
+
+.toporeal td:last-child {
+  background: none; }
+
+.tabletop td {
+  border: 0 !important;
+  height: 25px; }
+
+.segdesc td {
+  font-size: 11px;
+  padding: 3px 5px !important;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.sub-coluna-div {
+  padding-right: 1.1em;
+  border-right: 1px solid #BFC7D0; }
+
+.sem-borda {
+  border: none; }
+
+.toporeal td {
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/separador-top-tabela.png) no-repeat center right;
+  height: 80px !important;
+  font-size: 15px; }
+
+.informacoes-salao {
+  width: 100%;
+  margin: 20px 0;
+  display: table;
+  background: url(http://www.vilaricahotel.com.br/vila/pt/imagens/eventos/bg-informacoes-tabela.jpg) repeat-x center; }
+
+.informacoes-salao h4 {
+  background: #ffffff;
+  font-weight: bold;
+  font-size: 19px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: table;
+  padding-right: 10px; }
+
+.borderLeft {
+  border-left: solid 1px #d5d7db; }
+
+.tabela-group td {
+  padding: 1em !important; }
+
+#contentTable {
+  margin-bottom: 4em; }
+
+#Localizacao {
+  margin-top: 11em; }
+  #Localizacao h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em; }
+  #Localizacao p {
+    font-family: Roboto; }
+
+.LocalizacaoIcons {
+  margin-top: 3em;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between; }
+  .LocalizacaoIcons div {
+    display: flex;
+    flex-direction: column;
+    background: #ddd;
+    width: 9%;
+    align-items: center;
+    height: 8.5em;
+    justify-content: center; }
+    .LocalizacaoIcons div img {
+      max-width: 37%;
+      margin-bottom: .5em;
+      margin-top: .3em; }
+    .LocalizacaoIcons div p {
+      font-size: .9em;
+      text-align: center; }
+
+#shoppingRecifeMarca {
+  max-width: 18em;
+  margin-left: 15em;
+  margin-bottom: .1em;
+  margin-top: -.2em; }
+
+#RioMar {
+  max-width: 4em;
+  margin-top: .5em;
+  margin-bottom: 1em; }
+
+.FiltroEndereco {
+  width: 100%;
+  height: 7em;
+  background: #dddddd;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .FiltroEndereco button {
+    background: #20658f;
+    color: #fff;
+    font-family: roboto;
+    padding: 1em;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22em;
+    width: 10em;
+    margin: 0;
+    border: none;
+    padding: .7em 1em;
+    border-radius: 3px;
+    font-weight: 500; }
+    .FiltroEndereco button:hover {
+      text-decoration: none;
+      color: #fff; }
+  .FiltroEndereco input {
+    padding: .54em 1em;
+    border: 1px solid #989898;
+    font-family: Roboto;
+    width: 18em;
+    margin-right: 1em; }
+
+.MapaContainer {
+  width: 100%;
+  height: 32em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .MapaContainer iframe {
+    width: 100% !important;
+    height: 100% !important; }
+
+#SingleNoticia {
+  margin-top: 11em; }
+  #SingleNoticia span {
+    margin-top: 3em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4em; }
+    #SingleNoticia span h2 {
+      color: #206580;
+      font-weight: 700;
+      font-family: Roboto;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      margin: 0;
+      margin-right: .3em; }
+    #SingleNoticia span h1 {
+      margin: 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 2.3em; }
+
+.NoticiaSingleContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto; }
+  .NoticiaSingleContainer p {
+    font-family: Roboto; }
+  .NoticiaSingleContainer .NoticiaSingleDesc {
+    width: 47%;
+    height: auto; }
+  .NoticiaSingleContainer .NoticiaSingleFoto {
+    width: 47%;
+    height: auto; }
+    .NoticiaSingleContainer .NoticiaSingleFoto div {
+      width: 100%;
+      height: 20em;
+      overflow: hidden;
+      margin-bottom: 2em; }
+      .NoticiaSingleContainer .NoticiaSingleFoto div img {
+        width: 100%; }
+    .NoticiaSingleContainer .NoticiaSingleFoto .dateSingle {
+      font-size: .9em;
+      font-family: Roboto;
+      font-weight: 500;
+      margin-bottom: .5em;
+      margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */
