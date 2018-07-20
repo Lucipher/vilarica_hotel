@@ -85,13 +85,37 @@ Os direitos sobre este site e tema, s├úo de propriedade de Hoteis Pernambuco 
   margin-right: 1em;
   color: #666; }
 
+.HeaderFixed {
+  margin-top: 0em;
+  transition: .3s ease-out; }
+
+.FiltroFixed {
+  position: fixed;
+  top: 6.4em;
+  transition: .3s ease-out; }
+
+.FiltroReserva-Interna {
+  margin-top: 6.5em;
+  position: fixed;
+  z-index: 999999; }
+
+.FiltroReserva-InternaNoFixed {
+  margin-top: 3.9em; }
+
 header {
   width: 100%;
   padding: 0em 8em;
   height: 6.5em;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background: #fff;
+  transition: .3s ease-out;
+  z-index: 9999999;
+  position: fixed;
+  top: 0%;
+  transition: .3s ease-out;
+  margin-top: 2.4em; }
 
 header a img {
   max-width: 82%; }
@@ -130,6 +154,10 @@ nav ul li a {
   text-transform: uppercase;
   font-weight: 500; }
 
+.carouselIndex {
+  position: relative;
+  margin-top: 6.5em; }
+
 #menu-item-24 a {
   color: #fff;
   background: #ff8000;
@@ -161,7 +189,8 @@ a:hover {
   display: flex;
   align-items: center;
   padding: 0em 8em;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition: .3s ease-out; }
   .FiltroReserva .ReservaTitulo {
     margin-left: 0em !important; }
 
@@ -442,6 +471,7 @@ a:hover {
     color: #206580;
     font-weight: 700;
     font-family: Roboto;
+    text-transform: uppercase;
     margin: 0;
     text-transform: uppercase; }
   #AcomodacoesHome h5 {
@@ -524,6 +554,7 @@ a:hover {
     color: #206580;
     font-weight: 700;
     font-family: Roboto;
+    text-transform: uppercase;
     margin: 0;
     margin-top: .5em;
     text-transform: uppercase; }
@@ -557,6 +588,9 @@ a:hover {
     align-items: center;
     justify-content: center;
     width: 22em; }
+    .OfertasHomeContainer .btnVerMais:hover {
+      text-decoration: none;
+      color: #fff; }
 
 .OfertasBox {
   width: 31.5%;
@@ -604,6 +638,7 @@ a:hover {
     color: #206580;
     font-weight: 700;
     font-family: Roboto;
+    text-transform: uppercase;
     text-transform: uppercase; }
   #NoticiasHome h5 {
     font-size: 1.4em;
@@ -919,5 +954,272 @@ a:hover {
 
 .dropCriancas .dropp-header, .dropCriancas .dropp-body {
   width: 9em; }
+
+#OHotel {
+  margin-top: 11em; }
+  #OHotel h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    margin-bottom: 2em; }
+
+.carouselHotel .carousel-indicators {
+  bottom: -4em; }
+.carouselHotel .carousel-indicators .active {
+  background: #25657f;
+  width: 16px;
+  height: 16px; }
+.carouselHotel .carousel-indicators li {
+  width: 14px;
+  height: 14px; }
+
+.OHotel-Contexto {
+  margin-top: 6em;
+  height: auto;
+  margin-bottom: 3em; }
+  .OHotel-Contexto p {
+    font-family: Roboto;
+    font-size: 1.2em; }
+
+#NossosServicos {
+  background: #f4f4f4; }
+  #NossosServicos h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-bottom: 1.7em; }
+  #NossosServicos span {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2em; }
+  #NossosServicos h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: Roboto;
+    margin-bottom: .5em;
+    text-transform: uppercase; }
+  #NossosServicos p {
+    font-family: Roboto;
+    font-size: .99em; }
+  #NossosServicos a {
+    background: #20658f;
+    color: #fff;
+    font-family: roboto;
+    padding: 1em;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22em;
+    width: 18em;
+    margin-top: 4em;
+    margin-bottom: 3em; }
+    #NossosServicos a:hover {
+      text-decoration: none;
+      color: #fff; }
+
+#Acomodacoes {
+  margin-top: 11em; }
+  #Acomodacoes h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    margin-bottom: 2em; }
+
+.acomodacoesContainer {
+  display: flex;
+  flex-direction: column; }
+  .acomodacoesContainer .acomodacoesBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30.4em;
+    margin-bottom: 5em;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 4em;
+    margin-top: -1em; }
+    .acomodacoesContainer .acomodacoesBox .acomodacoesIMG {
+      width: 53%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; }
+      .acomodacoesContainer .acomodacoesBox .acomodacoesIMG img {
+        width: 100%; }
+    .acomodacoesContainer .acomodacoesBox .acomodacoesDesc {
+      height: 100%;
+      width: 44%;
+      display: flex;
+      flex-direction: column; }
+      .acomodacoesContainer .acomodacoesBox .acomodacoesDesc h2 {
+        color: #206580;
+        font-weight: 700;
+        font-family: Roboto;
+        text-transform: uppercase;
+        color: #333 !important;
+        margin-top: .2em !important;
+        margin-bottom: 0 !important; }
+      .acomodacoesContainer .acomodacoesBox .acomodacoesDesc h4 {
+        font-size: .99em;
+        font-family: Roboto;
+        margin-bottom: 0;
+        font-weight: 400;
+        margin-top: 1.5em; }
+
+.acomodacoesSkills {
+  display: flex;
+  margin-top: 1.5em;
+  flex-wrap: wrap; }
+  .acomodacoesSkills div {
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+    margin-bottom: 1em; }
+  .acomodacoesSkills span {
+    width: 2.8em;
+    height: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #dddddd; }
+    .acomodacoesSkills span img {
+      max-width: 53%; }
+  .acomodacoesSkills p {
+    margin: 0;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: .9em;
+    font-weight: 500;
+    margin-left: .9em; }
+
+.PrecoAcomodacoes {
+  display: flex;
+  align-items: center;
+  margin-top: 1em; }
+  .PrecoAcomodacoes a {
+    background: #20658f;
+    color: #fff;
+    font-family: roboto;
+    padding: 1em;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22em;
+    width: 10em;
+    margin-left: 2.4em; }
+    .PrecoAcomodacoes a:hover {
+      text-decoration: none;
+      color: #fff; }
+  .PrecoAcomodacoes div {
+    display: flex;
+    flex-direction: column; }
+    .PrecoAcomodacoes div p {
+      font-family: Roboto;
+      color: #757575;
+      font-weight: 500;
+      font-size: .99em;
+      margin: 0;
+      margin-bottom: .5em; }
+    .PrecoAcomodacoes div span {
+      display: flex;
+      align-items: center; }
+      .PrecoAcomodacoes div span h3 {
+        margin: 0;
+        margin-right: .3em;
+        font-weight: 700; }
+      .PrecoAcomodacoes div span p {
+        margin: 0; }
+
+.acomodacoesBox:nth-child(1n+2) {
+  flex-direction: row-reverse; }
+
+#Info {
+  background: #f4f4f4; }
+  #Info h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase; }
+  #Info p {
+    font-family: Roboto;
+    color: #656565;
+    line-height: 1.7em;
+    margin-top: 2.4em;
+    margin-bottom: 2em; }
+
+#Eventos {
+  margin-top: 11em; }
+  #Eventos h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    margin-bottom: 2em; }
+  #Eventos span {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2em; }
+  #Eventos h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-family: Roboto;
+    margin-bottom: .5em;
+    text-transform: uppercase; }
+  #Eventos p {
+    font-family: Roboto;
+    font-size: .99em; }
+
+#InfoSaloes {
+  background: #f4f4f4; }
+  #InfoSaloes h2 {
+    color: #206580;
+    font-weight: 700;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-bottom: 1.7em; }
+  #InfoSaloes table {
+    width: 85%;
+    background: blue;
+    margin: 0 auto; }
+    #InfoSaloes table thead {
+      background: #25657f;
+      color: #fff; }
+      #InfoSaloes table thead tr {
+        height: 7em; }
+      #InfoSaloes table thead th {
+        text-align: center; }
+    #InfoSaloes table tbody {
+      background: #dddddd;
+      font-family: Roboto;
+      color: #6b6a6a;
+      text-align: center; }
+      #InfoSaloes table tbody td {
+        padding: .8em; }
+
+.trSub {
+  height: 0em !important; }
+  .trSub th {
+    font-size: .8em !important;
+    font-weight: 600 !important; }
 
 /*# sourceMappingURL=style.css.map */

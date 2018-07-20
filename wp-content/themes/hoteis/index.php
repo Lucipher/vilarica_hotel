@@ -13,7 +13,7 @@ $noticias_inicial = get_field('noticias_inicial');
 ?>
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide carouselIndex" data-ride="carousel">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -35,6 +35,7 @@ $noticias_inicial = get_field('noticias_inicial');
 		<div class="item">
 			<img src="<?php the_field('terceiro_banner'); ?>">
 		</div>
+		
 	</div>
 
 	<!-- Left and right controls -->
@@ -46,30 +47,20 @@ $noticias_inicial = get_field('noticias_inicial');
 	</a>
 </div>
 
-<div class='FiltroReserva'>
+<div class='FiltroReserva FiltroReservaHome'>
 	<span class='ReservaTitulo'>
 		<p>Faça sua</p>
 		<h3>Reserva</h3>
 	</span>
 	<form class='filtroForm'>
-<!-- 		<div class='containerDate'>
-			<input class="ui-datepicker-input" placeholder="ENTRADA">
-		</div> -->
-<!-- 		<div class='containerDate container2'>
-			<input class="ui-datepicker-input" placeholder="SAIDA">
-		</div> -->
 
 		<div class='CalendarioBox'>
 			<input type="text" name="entrada" id='Entrada' placeholder="ENTRADA">
-			<i class="material-icons">
-calendar_today
-</i>
+			<i class="material-icons">calendar_today</i>
 		</div>
 		<div class='CalendarioBox'>
 			<input type="text" name="saida" id='Saida' placeholder="SAÍDA">
-			<i class="material-icons">
-calendar_today
-</i>
+			<i class="material-icons">calendar_today</i>
 		</div>
 		<div class="dropp ">
 			<div class="dropp-header">
