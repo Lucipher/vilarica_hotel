@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="<?php echo get_bloginfo('template_url') ?>/imagens/favicon.png" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_url') ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_url') ?>/css/slick.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-      
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 
@@ -32,14 +34,14 @@
         </script>
     </head>
     <body>
-   
-    <?php require_once('pre-header.php') ?>
-     
-       <header>
-        <a href="/" title='Logo Vila Rica Hotel' alt='Logo Vila Rica Hotel'><img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/logo.png"></a>
 
-        <nav>
-            <?php wp_nav_menu( array('menu' => 'Menu horizontal', )); ?>
-        </nav>
+        <?php require_once('pre-header.php') ?>
 
-    </header>
+        <header>
+            <a href="/" title='Logo Vila Rica Hotel' alt='Logo Vila Rica Hotel'><img src="<?php echo get_bloginfo('template_url') ?>/imagens/logos/logo.png"></a>
+
+            <nav>
+                <?php wp_nav_menu( array('menu' => 'Menu horizontal', )); ?>
+            </nav>
+
+        </header>

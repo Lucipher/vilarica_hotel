@@ -116,9 +116,12 @@ while (have_posts () ): the_post () ;
 endif;
 wp_reset_query();
 ?>
+
 <script src='<?php echo get_bloginfo('template_url') ?>/js/bootstrap.min.js'></script>
 <script src='<?php echo get_bloginfo('template_url') ?>/js/jquery-3.3.1.min.js'></script>
 <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery-ui.min.js"></script>
+<script src='<?php echo get_bloginfo('template_url') ?>/js/slick.min.js'></script>
+
 <script src='<?php echo get_bloginfo('template_url') ?>/js/app.js'></script>
 
 <?php wp_footer(); ?>

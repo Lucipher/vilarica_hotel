@@ -5,6 +5,7 @@ Template Name: Template Home
 ?>
 
 
+
 <div class='FiltroReserva FiltroReserva-Interna'>
 	<span class='ReservaTitulo'>
 		<p>Faça sua</p>
@@ -68,96 +69,109 @@ Template Name: Template Home
 	<div class='container'>
 		<main>
 			
-<?php
-if(have_posts()):
-	while(have_posts()):
-		the_post();
-		$titulo_da_noticia = get_field('titulo_da_noticia');
-		$corpo_da_noticia = get_field('corpo_da_noticia');
-		$imagem_da_noticia = get_field('imagem_da_noticia');
-		$data_de_publicacao = get_field('data_de_publicacao');
+			<?php
 
-		?>
+			
+
+			if(have_posts()):
+				while(have_posts()):
+					the_post();
+					$titulo_da_noticia = get_field('titulo_da_noticia');
+					$corpo_da_noticia = get_field('corpo_da_noticia');
+					$imagem_da_noticia = get_field('imagem_da_noticia');
+					$data_de_publicacao = get_field('data_de_publicacao');
 
 
-
-	
-		<span><h2>NOTÍCIAS / </h2><h1><?php echo $titulo_da_noticia ?></h1></span>
-
-		<div class='NoticiaSingleContainer'>
-			<div class='NoticiaSingleDesc'>
-				<p><?php echo $corpo_da_noticia ?></p>
-			</div>
-			<div class='NoticiaSingleFoto'>
-				<p class='dateSingle'><?php echo $data_de_publicacao ?></p>
-				<div>
-					<img src="<?php echo $imagem_da_noticia ?>">
-				</div>
-
-				<p>Compartilhe:</p>
-
-				<span></span>
-
-			</div>
-		</div>
+					?>
 
 
 
-	<?php endwhile;
-endif;
-wp_reset_query();
-?>
+
+					<span><h2>NOTÍCIAS / </h2><h1><?php echo $titulo_da_noticia ?></h1></span>
+
+					<div class='NoticiaSingleContainer'>
+						<div class='NoticiaSingleDesc'>
+							<p><?php echo $corpo_da_noticia ?></p>
+						</div>
+						<div class='NoticiaSingleFoto'>
+							<p class='dateSingle'><?php echo $data_de_publicacao ?></p>
+							<div>
+								<img src="<?php echo $imagem_da_noticia ?>">
+							</div>
+
+							<p>Compartilhe:</p>
+
+
+
+
+						</div>
+					</div>
+
+
+
+				<?php endwhile;
+			endif;
+			wp_reset_query();
+			?>
 		</main>
 	</div>
 </section>
-<?php /*
-Template Name: Template post
-*/  ?>
-
-<?php while (have_posts () ): the_post () ;   
-
-	$noticias_inicial = get_field('noticias_inicial');
-
-?>
 
 
 
-<section id='NoticiasHome'>
+
+
+<section id='Ofertas' class='vejaTbm'>
 	<div class='container'>
 		<main>
-			<h2>VEJA TAMBÉM</h2>
+			<h2>VEJA TAMBÉM</h2><br>
 
 			<div class='noticiasContainer'>
-				<?php                  
-				for($w = 0; $w < count($noticias_inicial); $w++){
-					$imagem_da_noticia = $noticias_inicial[$w]['imagem_da_noticia'];
-					$hashtag = $noticias_inicial[$w]['hashtag'];
-					$titulo_da_noticia = $noticias_inicial[$w]['titulo_da_noticia'];
-					$descricao_da_noticia = $noticias_inicial[$w]['descricao_da_noticia'];
-					$link_da_noticia = $noticias_inicial[$w]['link_da_noticia'];
-					$data_de_publicacao = $noticias_inicial[$w]['data_de_publicacao'];
-				?>  
+				<?php
+				$categoria = get_the_category($post_object->ID);
+				$nomeCategoria = $categoria[0]->cat_name;
+				
 
-				<div class='noticiasBox'><i><?php echo $data_de_publicacao?></i>
+				$post_objects = get_field('veja_tambem');
+				if( $post_objects ): ?>
+				<?php foreach( $post_objects as $post_object):
+
+				$thumb_id = get_post_thumbnail_id($post_object->ID);
+				$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+
+				?>
+
+				<div class='noticiasBox'><i><?php echo $post_object->post_date; ?></i>
 					<div class='noticiasIMG'>
-						<img src="<?php echo $imagem_da_noticia?>">
+						<img src="<?php echo $thumb_url[0] ?>">
 					</div>
 					<div class='noticiasDESC'>
-						<h4>#<?php echo $hashtag?></h4>
-						<h3><?php echo $titulo_da_noticia?></h3>
-						<p><?php echo $descricao_da_noticia?>...</p>
-						<a href="<?php echo $link_da_noticia?>">Continuar lendo</a>
+						<h4>#<?php echo $nomeCategoria;  ?></h4>
+						<h3><?php echo $post_object->post_title; ?></h3>
+						<p><?php echo $post_object->post_excerpt; ?>...</p>
+						<a href="<?php echo $post_object->guid; ?>">Continuar lendo</a>
 					</div>
 				</div>
 
-				<?php
-				}
-				?>
-			</div>
-			<a href="#" class='btnVerMaisNoticias'>VER MAIS NOTÍCIAS</a>
-		</main>
-	</div>
+<!-- 					<li>
+						<a href=""><?php echo get_the_title($post_object->ID); ?></a>
+						<span><?php the_field('field_name', $post_object->ID); ?></span>
+					</li> -->
+
+
+
+				<?php endforeach; ?>
+			<?php endif;
+
+			?>
+
+
+
+
+		</div>
+	</main>
+</div>
 </section>
-<?php endwhile;  wp_reset_query();?>
+
 
 <?php get_footer(); ?>

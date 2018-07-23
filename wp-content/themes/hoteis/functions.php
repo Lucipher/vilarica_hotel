@@ -1,7 +1,8 @@
 <?php
 
-define(TEMPLATE_URL, get_bloginfo('template_url'));
-define(SITE_URL, site_url());
+// define(TEMPLATE_URL, get_bloginfo('template_url'));
+// define(SITE_URL, site_url());
+
 
 /*MENU*/
 register_nav_menu('menu-categorias','Menu Categorias');
@@ -19,20 +20,10 @@ register_nav_menu('menu-categorias','Menu Categorias');
 }*/
 
 // Registro das suas widgets
-if ( function_exists('register_sidebar') )
-{
-    register_sidebar(array(
-        'name' => __( 'sidbar-1'),
-        'id' => 'sidebar-1',
-        'description' => __( 'Breve descrição sobre esta SIDEBAR.'),
-        'before_title' => '<h1>',
-        'after_title' => '</h1>',
-    ) );
-}
 
-// Imagem Destacada
-//add_theme_support('post-thumbnails', array('post'));
-//set_post_thumbnail_size( 780, 360); /* define o tamanho do thumbnail no painel de controle do WordPress */
+
+add_theme_support('post-thumbnails', array('post'));
+set_post_thumbnail_size( 780, 360); /* define o tamanho do thumbnail no painel de controle do WordPress */
 
 // Paginação
 function wordpress_pagination() {

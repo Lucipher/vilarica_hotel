@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+
+
+
+  $('.acomodacoesIMGList').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    prevArrow:"<i class='material-icons arrowsPre arrowLEFT'>arrow_back</i>",
+    nextArrow:"<i class='material-icons arrowsPre arrowRIGHT'>arrow_forward</i>",
+  });
+  
+
   $(window).scroll(function() {
     if ($(this).scrollTop() > 25) {
 

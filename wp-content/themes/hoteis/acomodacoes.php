@@ -1,6 +1,11 @@
 <?php get_header();
 /* Template Name: Template Acomodações */
 ?>
+<?php while (have_posts () ): the_post () ;   
+
+$acomodacoes = get_field('acomodacoes');
+$informacos_adicionais = get_field('informacos_adicionais');
+?>
 
 <div class='FiltroReserva FiltroReserva-Interna'>
 	<span class='ReservaTitulo'>
@@ -67,195 +72,69 @@
 			<h2>Acomodações</h2>
 
 			<div class='acomodacoesContainer'>
-				<div class='acomodacoesBox'>
-					<div class='acomodacoesIMG'>
-						<img src="<?php echo get_bloginfo('template_url') ?>/imagens/home/fotohotel.png">
-					</div>
-					<div class='acomodacoesDesc'>
-						<h2>STANDARD</h2>
-						<h4>Sua hospedagem com um jeito charmoso e acolhedor, o apartamento stadard acomoda até duas pessoas confortavelemente.</h4>
-						<h4>Equipado com duas camas de solteiro ou uma cama casal</h4>
 
-						<div class='acomodacoesSkills'>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/snowflake.png">
-								</span>
-								<p>Ar Condicionado</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/wifi.png">
-								</span>
-								<p>Internet</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/safe-box.png">
-								</span>
-								<p>Cofre</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/kids-couple.png">
-								</span>
-								<p>Crianças</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/office-telephone.png">
-								</span>
-								<p>Telefone</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/minibar.png">
-								</span>
-								<p>Frigobar</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/monitor.png">
-								</span>
-								<p>Tv à cabo</p>
+				<?php                  
+				for($w = 0; $w < count($acomodacoes); $w++){
+					$titulo = $acomodacoes[$w]['titulo'];
+					$descricao = $acomodacoes[$w]['descricao'];
+					$preco = $acomodacoes[$w]['preco'];
+					$referente = $acomodacoes[$w]['referente'];
+					$imagens = $acomodacoes[$w]['imagens'];
+					$imagemDestaque = $imagens[0]['imagens_dentro'];
+					$adicionais = $acomodacoes[$w]['adicionais'];
+					?>
+					<div class='acomodacoesBox'>
+						<div class='acomodacoesIMG acomodacoesIMGList'>
+
+								<?php for($i = 0; $i < count($imagens); $i++){
+
+									$imagem = $imagens[$i]['imagens_dentro'];
+
+									?>
+										<img src="<?php echo $imagem ?>">
+									<?php
+								}
+								?>
+
+						</div>
+						<div class='acomodacoesDesc'>
+							<h2><?php echo $titulo;?></h2>
+							<h4><?php echo $descricao;?></h4>
+
+							<div class='acomodacoesSkills'>
+								<?php for($a = 0; $a < count($adicionais); $a++){
+
+									$icone = $adicionais[$a]['icone'];
+									$nome = $adicionais[$a]['nome'];
+
+									?>
+
+
+									<div>
+										<span>
+											<img src="<?php echo $icone ?>">
+										</span>
+										<p><?php echo $nome ?></p>
+									</div>
+
+
+									<?php
+								}?>
+							</div>  
+
+
+							<div class='PrecoAcomodacoes'>
+								<div>
+									<p>A partir de</p>
+									<span><h3>R$<?php echo $preco ?></h3><p> /<?php echo $referente ?></p></span>
+								</div>
+								<a href="#">RESERVE AGORA</a>
 							</div>
 						</div>
-
-						<div class='PrecoAcomodacoes'>
-							<div>
-								<p>A partir de</p>
-								<span><h3>R$212</h3><p> /diária + taxas</p></span>
-							</div>
-							<a href="#">RESERVE AGORA</a>
-						</div>
 					</div>
-				</div>
-								<div class='acomodacoesBox'>
-					<div class='acomodacoesIMG'>
-						<img src="<?php echo get_bloginfo('template_url') ?>/imagens/home/fotohotel.png">
-					</div>
-					<div class='acomodacoesDesc'>
-						<h2>STANDARD</h2>
-						<h4>Sua hospedagem com um jeito charmoso e acolhedor, o apartamento stadard acomoda até duas pessoas confortavelemente.</h4>
-						<h4>Equipado com duas camas de solteiro ou uma cama casal</h4>
-
-						<div class='acomodacoesSkills'>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/snowflake.png">
-								</span>
-								<p>Ar Condicionado</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/wifi.png">
-								</span>
-								<p>Internet</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/safe-box.png">
-								</span>
-								<p>Cofre</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/kids-couple.png">
-								</span>
-								<p>Crianças</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/office-telephone.png">
-								</span>
-								<p>Telefone</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/minibar.png">
-								</span>
-								<p>Frigobar</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/monitor.png">
-								</span>
-								<p>Tv à cabo</p>
-							</div>
-						</div>
-
-						<div class='PrecoAcomodacoes'>
-							<div>
-								<p>A partir de</p>
-								<span><h3>R$212</h3><p> /diária + taxas</p></span>
-							</div>
-							<a href="#">RESERVE AGORA</a>
-						</div>
-					</div>
-				</div>	
-								<div class='acomodacoesBox'>
-					<div class='acomodacoesIMG'>
-						<img src="<?php echo get_bloginfo('template_url') ?>/imagens/home/fotohotel.png">
-					</div>
-					<div class='acomodacoesDesc'>
-						<h2>STANDARD</h2>
-						<h4>Sua hospedagem com um jeito charmoso e acolhedor, o apartamento stadard acomoda até duas pessoas confortavelemente.</h4>
-						<h4>Equipado com duas camas de solteiro ou uma cama casal</h4>
-
-						<div class='acomodacoesSkills'>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/snowflake.png">
-								</span>
-								<p>Ar Condicionado</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/wifi.png">
-								</span>
-								<p>Internet</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/safe-box.png">
-								</span>
-								<p>Cofre</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/kids-couple.png">
-								</span>
-								<p>Crianças</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/office-telephone.png">
-								</span>
-								<p>Telefone</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/minibar.png">
-								</span>
-								<p>Frigobar</p>
-							</div>
-							<div>
-								<span>
-									<img src="<?php echo get_bloginfo('template_url') ?>/imagens/icons/monitor.png">
-								</span>
-								<p>Tv à cabo</p>
-							</div>
-						</div>
-
-						<div class='PrecoAcomodacoes'>
-							<div>
-								<p>A partir de</p>
-								<span><h3>R$212</h3><p> /diária + taxas</p></span>
-							</div>
-							<a href="#">RESERVE AGORA</a>
-						</div>
-					</div>
-				</div>		
+					<?php
+				}
+				?>
 			</div>
 
 		</main>
@@ -267,16 +146,9 @@
 		<main>
 			<h2>INFORMAÇÕES ADICIONAIS</h2>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p><?php echo $informacos_adicionais ?></p>
 		</main>
 	</div>
 </section>
-
+<?php endwhile;  wp_reset_query();?>
 <?php get_footer(); ?>
-
-
