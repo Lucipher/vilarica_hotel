@@ -12,7 +12,7 @@
 
 <p>- Blog<p>
 
-	<strong> * Trial Version * </strong>
+<strong> * Trial Version * </strong>
 
 
 <img src="http://agenciacapiba.com.br/img/vilarica1.jpg">
